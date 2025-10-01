@@ -8,7 +8,7 @@ This is a web-based Personal Finance Tracker application built with **Python (Fl
 * View total monthly spending and a detailed category-by-category comparison against the set budget.
 *  Data is saved locally in `finance_tracker_data.json`.
 
-##Requirements
+**##Requirements**
    python version 3 and Flask
 
 ## Installation 
