@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard - Finance Tracker{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12 text-center mb-4">
+        <h1>Welcome to Your Personal Finance Tracker</h1>
+        <p class="lead">Manage your money, set goals, and track your spending.</p>
+    </div>
+</div>
+
+<div class="row mt-4">
+    <div class="col-md-4 mb-4">
+        <div class="card h-100 shadow-sm border-primary">
+            <div class="card-body text-center">
+                <h5 class="card-title text-primary">Log New Expense</h5>
+                <p class="card-text">Quickly record a new spending transaction.</p>
+                <a href="{{ url_for('log_expense_web') }}" class="btn btn-primary w-75">Go to Logging</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-4 mb-4">
+        <div class="card h-100 shadow-sm border-success">
+            <div class="card-body text-center">
+                <h5 class="card-title text-success">Set Monthly Budget</h5>
+                <p class="card-text">Define spending limits for your categories.</p>
+                <a href="{{ url_for('set_budget_web') }}" class="btn btn-success w-75">Set Budget</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4 mb-4">
+        <div class="card h-100 shadow-sm border-info">
+            <div class="card-body text-center">
+                <h5 class="card-title text-info">View Reports</h5>
+                <p class="card-text">Analyze spending vs. budget trends.</p>
+                <a href="{{ url_for('show_basic_reports_web') }}" class="btn btn-info w-75">View Reports</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
