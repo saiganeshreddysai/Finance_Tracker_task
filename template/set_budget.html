@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block title %}Set Budget{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8 col-lg-6">
+        <div class="card shadow-lg">
+            <div class="card-header bg-success text-white text-center">
+                <h2>Set Monthly Budget</h2>
+            </div>
+            <div class="card-body">
+                
+                <form method="POST" action="{{ url_for('set_budget_web') }}">
+                    
+                    <div class="mb-3">
+                        <label for="category" class="form-label">Category</label>
+                        <select class="form-select" id="category" name="category" required>
+                            <option value="" disabled selected>Select or Type Category</option>
+                            {% for cat in categories %}
+                                <option value="{{ cat }}">{{ cat }}</option>
+                            {% endfor %}
+                            <option value="Other">Other / Custom</option>
+                        </select>
+                        <small class="form-text text-muted">Select an existing one or choose "Other".</small>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="month_year" class="form-label">Month and Year (YYYY-MM)</label>
+                        <input type="month" class="form-control" id="month_year" name="month_year" 
+                               value="{{ current_month_year }}" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="amount" class="form-label">Budget Amount (Rs)</label>
+                        <input type="number" step="0.01" min="0" class="form-control" id="amount" name="amount" placeholder="e.g., 5000.00" required>
+                    </div>
+                    
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-success btn-lg mt-3">Set Budget</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
